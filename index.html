@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 2em 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .skills, .projects, .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill, .project, .contact-info {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            width: 45%;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Priyamathi Portfolio</h1>
+        <p>College Student | Aspiring Web Developer</p>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Priyamathi, a college student pursuing a degree in Computer Science. I am passionate about web development and design. Through various projects and coursework, I have gained a solid foundation in programming languages like HTML, CSS, JavaScript, and Python.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>HTML</h3>
+                    <p>Proficient in creating structured and semantic HTML documents.</p>
+                </div>
+                <div class="skill">
+                    <h3>CSS</h3>
+                    <p>Experienced in styling web pages using CSS and responsive design.</p>
+                </div>
+                <div class="skill">
+                    <h3>JavaScript</h3>
+                    <p>Skilled in creating interactive web pages using JavaScript and APIs.</p>
+                </div>
+                <div class="skill">
+                    <h3>Python</h3>
+                    <p>Comfortable with Python for backend development and automation tasks.</p>
+                </div>
+                <div class="skill">
+                    <h3>React</h3>
+                    <p>Experienced in building interactive UIs using React.js.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Personal Portfolio Website</h3>
+                    <img src="portfolio.png" alt="Portfolio Project">
+                    <p>A responsive portfolio website built using HTML, CSS, and JavaScript.</p>
+                    <a href="https://github.com/johndoe/portfolio" class="button">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>Weather App</h3>
+                    <img src="weather.png" alt="Weather App">
+                    <p>A weather forecasting app built using React and OpenWeather API.</p>
+                    <a href="https://github.com/johndoe/weather-app" class="button">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact">
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p>Priyamathi1528@gmailS.com</p>
+                </div>
+                <div class="contact-info">
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/johndoe" class="button">Visit Profile</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+   
+
+</body>
+
+</html>
