@@ -8,82 +8,267 @@
     <title>Student Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background-color: #333;
+            background-color: #ff6f61;
             color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 3em 0;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
         header h1 {
             margin: 0;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            animation: fadeIn 2s ease-in-out;
+            opacity: 0;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        /* Keyframes for Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .container {
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
+            padding: 2em 0;
         }
 
+        /* Section Styles */
         .section {
-            margin: 2em 0;
+            margin: 3em 0;
         }
 
         .section h2 {
-            text-align: center;
+            font-size: 2.5em;
             color: #333;
+            text-align: center;
+            margin-bottom: 1em;
+            text-transform: uppercase;
+            position: relative;
+            animation: fadeUp 1.5s ease-out;
         }
 
-        .skills, .projects, .contact {
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Me Section */
+        #about p {
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Skills Section */
+        .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
             justify-content: center;
+            gap: 20px;
         }
 
-        .skill, .project, .contact-info {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
+        .skill {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
             width: 30%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: fadeInUp 1.5s ease-out;
         }
 
-        .contact-info {
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill h3 {
+            font-size: 1.5em;
+            color: #ff6f61;
+            transition: color 0.3s ease;
+        }
+
+        .skill p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
             width: 45%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.5s ease-out;
         }
 
         .project img {
             width: 100%;
             height: auto;
             border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project:hover img {
+            transform: scale(1.05);
+        }
+
+        .project h3 {
+            font-size: 1.6em;
+            margin: 1em 0;
+            color: #ff6f61;
+        }
+
+        .project p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Button Styles */
         .button {
-            background-color: #333;
+            background-color: #ff6f61;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
             text-align: center;
+            font-size: 1.1em;
+            margin-top: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
+        .button:hover {
+            background-color: #e54e47;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5em;
+            color: #ff6f61;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 1em 0;
+            padding: 2em 0;
             background-color: #333;
             color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            font-size: 1.1em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills .skill,
+            .projects .project,
+            .contact-info {
+                width: 100%;
+            }
+
+            .container {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -91,7 +276,7 @@
 <body>
 
     <header>
-        <h1>Priyamathi Portfolio</h1>
+        <h1>John Doe's Portfolio</h1>
         <p>College Student | Aspiring Web Developer</p>
     </header>
 
@@ -100,7 +285,7 @@
         <section class="section" id="about">
             <h2>About Me</h2>
             <p>
-                Hello! I'm Priyamathi, a college student pursuing a degree in Computer Science. I am passionate about web development and design. Through various projects and coursework, I have gained a solid foundation in programming languages like HTML, CSS, JavaScript, and Python.
+                Hello! I'm John Doe, a college student pursuing a degree in Computer Science. I am passionate about web development and design. Through various projects and coursework, I have gained a solid foundation in programming languages like HTML, CSS, JavaScript, and Python.
             </p>
         </section>
 
@@ -156,7 +341,7 @@
             <div class="contact">
                 <div class="contact-info">
                     <h3>Email</h3>
-                    <p>Priyamathi1528@gmailS.com</p>
+                    <p>johndoe@example.com</p>
                 </div>
                 <div class="contact-info">
                     <h3>LinkedIn</h3>
@@ -166,8 +351,11 @@
         </section>
     </div>
 
-   
+    <footer>
+        <p>&copy; 2025 John Doe. All Rights Reserved.</p>
+    </footer>
 
 </body>
 
 </html>
+
